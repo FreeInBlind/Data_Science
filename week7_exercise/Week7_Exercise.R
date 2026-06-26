@@ -17,7 +17,7 @@ View(students)
 
 # 2.Access and Subset Data
 
-# 使用两种不同的方式显示 Test_Score 列(#Display the Test_Score column using both df['Test_Score'] and df$Test_score.)
+# 使用两种不同的方式显示 Test_Score 列(Display the Test_Score column using both df['Test_Score'] and df$Test_score.)
 students['Test_Score']
 students$Test_Score
 
@@ -63,18 +63,17 @@ students_na <- data.frame(
   Attendance = c(90, 85, 95, NA, 88)
 )
 
-# 1. 检查数据框中的缺失值 (NA)(Check for missing values (NA) in the data frame)
+# 1) 检查数据框中的缺失值 (NA)(Check for missing values (NA) in the data frame)
 is.na(students_na)
 
-# 2. 将 Age 列中的缺失值替换为该列的平均年龄 (mean)(Replace missing values in Age with the mean age)
+# 2) 将 Age 列中的缺失值替换为该列的平均年龄 (mean)(Replace missing values in Age with the mean age)
 students_na$Age[is.na(students_na$Age)] <- mean(students_na$Age, na.rm = TRUE)
 
-# 3. 将 Test_Score 列中的缺失值替换为该列的中位数 (median)(Replace missing values in Test_Score with the median test score)
+# 3) 将 Test_Score 列中的缺失值替换为该列的中位数 (median)(Replace missing values in Test_Score with the median test score)
 students_na$Test_Score[is.na(students_na$Test_Score)] <- median(students_na$Test_Score, na.rm = TRUE)
 
-# 4. 将 Attendance 列中的缺失值替换为 0(Replace missing values in Attendance with 0)
+# 4) 将 Attendance 列中的缺失值替换为 0(Replace missing values in Attendance with 0)
 students_na$Attendance[is.na(students_na$Attendance)] <- 0
 
 # 打印最终清理好的数据框(print result)
 print(students_na)
-
